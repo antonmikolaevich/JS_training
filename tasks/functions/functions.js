@@ -3,7 +3,7 @@
  *
  */
 function add(a, b) {
-
+    return a + b;
 }
 
 /**
@@ -15,7 +15,7 @@ function add(a, b) {
  * }
  */
 function getFullName(object) {
-
+return (object.firstName + " " + object.lastName);
 }
 
 /**
@@ -23,7 +23,11 @@ function getFullName(object) {
  * true if odd, false if even
  */
 function isOdd(n) {
-    
+    if (n % 2 != 0)  {
+        return true;
+    }  else {
+        return false;
+    }
 }
 
 /**
@@ -31,15 +35,29 @@ function isOdd(n) {
  * e.g ["one", "two", "three"] should return one
  */
 function getShortest(wordArray) {
-
+    let minWord = wordArray[0];
+    let maxWord;
+    for (let i = 1; i < wordArray.length; i ++){
+        let value = wordArray[0];
+        if (wordArray[i].length < value.length){
+            minWord = wordArray[i];
+        } else {
+            maxWord = wordArray [i];
+        }
+    }
+    return minWord;
 }
+    
 
 /**
  * write function that returns word google with given numbers of "o" symbols
  * e.g getGoogle(5) should return "gooooogle"
  */
 function getGoogle(n) {
-
+    let a = 'o';
+    let b = a.repeat(n);
+    let c = "g" + b + "gle"
+    return c;
 }
 
 /**
@@ -52,8 +70,42 @@ function getGoogle(n) {
  * }
  */
 function getUser(firstName, lastName, age) {
+    let object = {
+        firstName,
+        lastName,
+        age
+    };
+    if (object.firstName != null & object.lastName != null & object.age == null){
+        return object = {
+            firstName,
+            lastName,
+            age: null
+        };
+    } else if (object.firstName != null & object.lastName == null & object.age != null){
+            return object = {
+                firstName,
+                lastName: null,
+                age};
+            } else if (object.firstName == null & object.lastName != null & object.age != null){
+                return object = {
+                    firstname: null,
+                    lastName,
+                    age};
+                } else {
+                    return {
+                        firstName,
+                        lastName,
+                        age
+                    };
+                
+                }
+            }
+        
+
     
-}
+    
+
+
 
 /**
  * write function that calculates total path traveled.
@@ -62,7 +114,11 @@ function getUser(firstName, lastName, age) {
  */
 
 function getTotalPath(path) {
-    
+    let num = 0;
+    for (let x of path){
+        num = num + x.distance;
+    }
+    return num;
 }
 
 
