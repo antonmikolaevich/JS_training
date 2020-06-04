@@ -4,6 +4,14 @@
  * @param {string} str
  */
 function reverseString(str) {
+  if (str == Number(str)){
+    return 'This is not a string!';
+  } else {
+  let array1 = str.split('');
+  let reversed = array1.reverse();
+  let endStr = reversed.join('');
+  return endStr
+  }
 }
 
 /**
@@ -12,7 +20,17 @@ function reverseString(str) {
 * @param {number} year
 */
 function centuryFromYear(year) {
-
+  let arrayNew = year.toString();
+  let array10 = arrayNew.split('');
+  let num = arrayNew.slice(0,2);
+  let newNum = Number(num);
+  let centuryYear = '';
+  if (array10[2] == 0 & array10[3] == 0){
+    centuryYear = newNum + 0;
+  } else {
+    centuryYear = newNum + 1;
+  }
+  return centuryYear;
 }
 
 /**
@@ -21,6 +39,14 @@ function centuryFromYear(year) {
  * @param {string} char
  */
 function strCount(str, char) {
+  let arr5 = str.split('');
+  let countOfLetter = 0;
+  for (let i = 0; i < arr5.length; i ++){
+    if (char == arr5[i]){
+      countOfLetter = countOfLetter + 1;
+    }
+  }
+  return countOfLetter;
 }
 
 /**
@@ -40,7 +66,8 @@ function truncateString(str, num) {
  * console.log(replace10("231054")) // 23ten54
  */
 function replace10(text) {
-
+  const newEl = text.replace(/10/g, "ten");
+  return newEl;
 }
 
 /**
@@ -51,7 +78,8 @@ function replace10(text) {
  * console.log(replaceConfidential("lorem [ipsum] si dolor")) // lorem [CONFIDENTIAL] si dolor
  */
 function replaceConfidential(text) {
-
+  const newElem = text.replace(/\[\w*\]/g, "[CONFIDENTIAL]");
+  return newElem;
 }
 
 module.exports = {

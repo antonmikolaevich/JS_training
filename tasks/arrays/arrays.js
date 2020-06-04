@@ -4,6 +4,8 @@
  * @return {Array} - char names
  */
 function getCharactersNames(chars) {
+    const array1 = chars.map((e1, i, chars) => e1.name);
+    return array1;
 }
 
 /**
@@ -11,6 +13,9 @@ function getCharactersNames(chars) {
  * @param {Array} chars
  */
 function printCharacterNames(chars) {
+    chars.forEach((a, i, chars) => {
+        console.log(a.name);
+    });
 }
 
 /**
@@ -19,6 +24,8 @@ function printCharacterNames(chars) {
  * @return {Array} - non human characters
  */
 function getNonHumanCharacters(chars) {
+    const array3 = chars.filter(e1 => e1.species != "Human");
+    return array3;
 }
 
 /**
@@ -27,6 +34,12 @@ function getNonHumanCharacters(chars) {
  * @return {Object} - Jerry object
  */
 function getJerryInfo(chars) {
+    const array4 = chars.filter(b => b.name == "Jerry Smith");
+    let conObj = ''
+    for (let i = 0; i < array4.length; i ++){
+        conObj = array4[i];
+    };
+    return conObj;
 }
 
 /**
@@ -35,6 +48,8 @@ function getJerryInfo(chars) {
  * @return {boolean}
  */
 function isAllHuman(chars) {
+    const nonHuman = c => c.species != "Human";
+    return chars.every(nonHuman);
 }
 
 /**
@@ -43,6 +58,8 @@ function isAllHuman(chars) {
  * @return {boolean}
  */
 function isAnyFishPerson(chars) {
+    const arrayFishPerson = chars.some(b => b.type == "Fish-Person");
+    return arrayFishPerson;
 }
 
 /**
@@ -51,7 +68,9 @@ function isAnyFishPerson(chars) {
  * @return {number} - minimum element index
  */
 function minItem(arr) {
-    //PLACE YOUR CODE HERE
+    const minPlace = (acc, curr) => acc < curr ? acc : curr;
+    const minCharacter = arr.reduce(minPlace);
+    return arr.indexOf(minCharacter);
 }
 
 module.exports = {
