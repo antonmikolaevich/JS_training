@@ -15,7 +15,7 @@ function add(a, b) {
  * }
  */
 function getFullName(object) {
-return (object.firstName + " " + object.lastName);
+return object.firstName + " " + object.lastName;
 }
 
 /**
@@ -36,13 +36,10 @@ function isOdd(n) {
  */
 function getShortest(wordArray) {
     let minWord = wordArray[0];
-    let maxWord;
     for (let i = 1; i < wordArray.length; i ++){
         let value = wordArray[0];
         if (wordArray[i].length < value.length){
             minWord = wordArray[i];
-        } else {
-            maxWord = wordArray [i];
         }
     }
     return minWord;
@@ -54,9 +51,7 @@ function getShortest(wordArray) {
  * e.g getGoogle(5) should return "gooooogle"
  */
 function getGoogle(n) {
-    let a = 'o';
-    let b = a.repeat(n);
-    let c = "g" + b + "gle"
+    let c = "g" + 'o'.repeat(n) + "gle"
     return c;
 }
 
@@ -70,12 +65,11 @@ function getGoogle(n) {
  * }
  */
 function getUser(firstName = null, lastName = null, age = null) {
-    let object = {
+    return {
         firstName,
         lastName,
         age
     };
-    return object;
 }  
 
 /**
