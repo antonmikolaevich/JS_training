@@ -3,7 +3,7 @@
  *
  */
 function add(a, b) {
-
+    return a + b;
 }
 
 /**
@@ -15,7 +15,7 @@ function add(a, b) {
  * }
  */
 function getFullName(object) {
-
+return object.firstName + " " + object.lastName;
 }
 
 /**
@@ -23,7 +23,11 @@ function getFullName(object) {
  * true if odd, false if even
  */
 function isOdd(n) {
-    
+    if (n % 2 != 0)  {
+        return true;
+    }  else {
+        return false;
+    }
 }
 
 /**
@@ -31,15 +35,24 @@ function isOdd(n) {
  * e.g ["one", "two", "three"] should return one
  */
 function getShortest(wordArray) {
-
+    let minWord = wordArray[0];
+    for (let i = 1; i < wordArray.length; i ++){
+        let value = wordArray[0];
+        if (wordArray[i].length < value.length){
+            minWord = wordArray[i];
+        }
+    }
+    return minWord;
 }
+    
 
 /**
  * write function that returns word google with given numbers of "o" symbols
  * e.g getGoogle(5) should return "gooooogle"
  */
 function getGoogle(n) {
-
+    let c = "g" + 'o'.repeat(n) + "gle"
+    return c;
 }
 
 /**
@@ -51,9 +64,13 @@ function getGoogle(n) {
  *    age: 42
  * }
  */
-function getUser(firstName, lastName, age) {
-    
-}
+function getUser(firstName = null, lastName = null, age = null) {
+    return {
+        firstName,
+        lastName,
+        age
+    };
+}  
 
 /**
  * write function that calculates total path traveled.
@@ -62,7 +79,11 @@ function getUser(firstName, lastName, age) {
  */
 
 function getTotalPath(path) {
-    
+    let num = 0;
+    for (let x of path){
+        num = num + x.distance;
+    }
+    return num;
 }
 
 
