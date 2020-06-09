@@ -4,7 +4,7 @@
  * @return {Array} - char names
  */
 function getCharactersNames(chars) {
-    const array1 = chars.map((e1, i, chars) => e1.name);
+    const array1 = chars.map(e1 => e1.name);
     return array1;
 }
 
@@ -13,7 +13,7 @@ function getCharactersNames(chars) {
  * @param {Array} chars
  */
 function printCharacterNames(chars) {
-    chars.forEach((a, i, chars) => {
+    chars.forEach(a => {
         console.log(a.name);
     });
 }
@@ -34,12 +34,8 @@ function getNonHumanCharacters(chars) {
  * @return {Object} - Jerry object
  */
 function getJerryInfo(chars) {
-    const array4 = chars.filter(b => b.name == "Jerry Smith");
-    let conObj = ''
-    for (let i = 0; i < array4.length; i ++){
-        conObj = array4[i];
-    };
-    return conObj;
+    const array4 = chars.find(b => b.name == "Jerry Smith");
+    return array4;
 }
 
 /**
