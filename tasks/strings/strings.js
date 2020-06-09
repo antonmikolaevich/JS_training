@@ -7,10 +7,7 @@ function reverseString(str) {
   if (str == Number(str)){
     return 'This is not a string!';
   } else {
-  let array1 = str.split('');
-  let reversed = array1.reverse();
-  let endStr = reversed.join('');
-  return endStr
+  return str.split('').reverse().join('');
   }
 }
 
@@ -21,16 +18,11 @@ function reverseString(str) {
 */
 function centuryFromYear(year) {
   let arrayNew = year.toString();
-  let array10 = arrayNew.split('');
   let num = arrayNew.slice(0,2);
-  let newNum = Number(num);
-  let centuryYear = '';
-  if (array10[2] == 0 & array10[3] == 0){
-    centuryYear = newNum + 0;
-  } else {
-    centuryYear = newNum + 1;
-  }
-  return centuryYear;
+  let num2 = arrayNew.slice(2,4);
+  let num3 = num + '.' + num2;
+  let num4 = Number(num3);
+  return Math.ceil(num4);
 }
 
 /**
@@ -39,14 +31,13 @@ function centuryFromYear(year) {
  * @param {string} char
  */
 function strCount(str, char) {
-  let arr5 = str.split('');
-  let countOfLetter = 0;
-  for (let i = 0; i < arr5.length; i ++){
-    if (char == arr5[i]){
-      countOfLetter = countOfLetter + 1;
-    }
-  }
-  return countOfLetter;
+  let result = new RegExp (char, 'g');
+  let arrayResult = str.match(result);
+  if (arrayResult != null){
+    return arrayResult.length;
+  } else {
+  return 0;
+  }  
 }
 
 /**
@@ -56,6 +47,13 @@ function strCount(str, char) {
  * @param {num} num - by wht amount of chars it should be truncated
  */
 function truncateString(str, num) {
+  if (str.length > num) {
+    let str1 = str.slice(0,num);
+    let str2 = str1 + '...';
+    return str2;
+  } else {
+    return str;
+  }
 }
 
 /**
