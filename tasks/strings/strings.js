@@ -17,12 +17,7 @@ function reverseString(str) {
 * @param {number} year
 */
 function centuryFromYear(year) {
-  let arrayNew = year.toString();
-  let num = arrayNew.slice(0,2);
-  let num2 = arrayNew.slice(2,4);
-  let num3 = num + '.' + num2;
-  let num4 = Number(num3);
-  return Math.ceil(num4);
+  return Math.ceil(year/100);
 }
 
 /**
@@ -48,9 +43,7 @@ function strCount(str, char) {
  */
 function truncateString(str, num) {
   if (str.length > num) {
-    let str1 = str.slice(0,num);
-    let str2 = str1 + '...';
-    return str2;
+    return str.slice(0,num) + '...';
   } else {
     return str;
   }
