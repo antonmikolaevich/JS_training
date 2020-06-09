@@ -14,13 +14,13 @@ function calculateDiscount(redemption) {
   let discount;
 
   if (redemption <= 350){
-    console.log('0%');
+    discount = 0;
 } else if (redemption > 351 && redemption <= 1350) {
-    console.log('15%');
+    discount = 15;
 } else if (redemption > 1350 && redemption <= 2700){
-    console.log('30%');
+    discount = 30;
 } else if (redemption > 2700 && redemption <= 6500){
-    console.log('45%');
+    discont = 45;
 } else {
     console.log('You have no discount')
 }
@@ -33,7 +33,7 @@ function calculateDiscount(redemption) {
  */
 {
  const i =10; //10! = 3628800
- var result = 1;
+ let result = 1;
   
   for(let a = 1; a <= 10; a ++){
     result = result * a;
@@ -71,11 +71,13 @@ let i = 0;
  */
 {
   const substr = ["I", " love", " JS"];
+  let sum = ''
 
   for (let x in substr){
+  sum = sum + substr[x];  
   }
 
-  console.log(substr[0] + substr[1] + substr[2]);
+  console.log(sum);
 
 }
 
@@ -92,7 +94,7 @@ let i = 0;
 
   let a = 0;
 
-  for (var t in personIncomes){
+  for (let t in personIncomes){
     a = a + personIncomes[t];
   }
 

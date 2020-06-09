@@ -27,7 +27,7 @@ if (x && y < 10) {
   console.log(x * y);
 }
 // Task 2
-console.log(x && y < 10 ? x + y : x * y);
+x && y < 10 ? console.log(x+y) : console.log(x * y);
 
 }
 
