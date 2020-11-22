@@ -21,3 +21,6 @@ module.exports = {
     person,
     student
 };
+
+
+добавление тест-строчки
